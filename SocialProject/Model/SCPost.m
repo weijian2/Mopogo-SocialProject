@@ -13,7 +13,7 @@
 // initWithDictionary is our customized init method(similar to Java Constructor)
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) { // super is parent(NSObject) of SCPost
-        self.userName = dictionary[@"name"]; // why we cannot write [self userName] = dictionary[@"name"];
+        self.name = dictionary[@"name"];
         self.message = dictionary[@"message"];
         self.location = dictionary[@"location"];
         self.postDate = dictionary[@"postDate"];

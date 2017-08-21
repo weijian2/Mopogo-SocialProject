@@ -7,7 +7,7 @@
 //
 
 #import "SCTabBarController.h"
-
+#import "SCHomeViewController.h"
 @interface SCTabBarController ()
 
 @end
@@ -23,22 +23,43 @@
 }
 
 - (NSArray<UIViewController *> *)ViewControllerArray {
-    UIViewController *homeController = [self homeViewController];
-    UIViewController *exploreController = [self exploreViewController];
+    UIViewController *homeController = [self homeNavigationViewController];
+    UIViewController *exploreController = [self exploreNavigationViewController];
     NSArray<UIViewController *> *arrayOfController = @[homeController, exploreController];
     return arrayOfController;
 }
 
-- (UIViewController *)homeViewController {
-    UIViewController *homeController = [[UIViewController alloc] init];
-    homeController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"Event"] tag:0]; // tag???
-    return homeController;
+//- (UIViewController *)homeViewController {
+//    SCHomeViewController *homeController = [[SCHomeViewController alloc] init];
+////    // set background to white
+////    homeController.view.backgroundColor = [UIColor whiteColor];
+//    homeController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"Events"] tag:0];
+//    return homeController;
+//}
+//
+//- (UIViewController *)exploreViewController {
+//    UIViewController *exploreController = [[UIViewController alloc] init];
+//    exploreController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Explore" image:[UIImage imageNamed:@"Explore"] tag:1];
+//    return exploreController;
+//}
+
+- (UIViewController *)homeNavigationViewController {
+    SCHomeViewController *homeViewController = [[SCHomeViewController alloc] initWithNibName:NSStringFromClass([SCHomeViewController class]) bundle:nil];
+    homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Home", nil) image:[UIImage imageNamed:@"Events"] selectedImage:[UIImage imageNamed:@"Events_selected"]];
+    homeViewController.tabBarItem.tag = 0;
+    // add navigationBar
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    return navigationController;
 }
 
-- (UIViewController *)exploreViewController {
+- (UIViewController *)exploreNavigationViewController {
     UIViewController *exploreController = [[UIViewController alloc] init];
-    exploreController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Explore" image:[UIImage imageNamed:@"Explore"] tag:1];
-    return exploreController;
+    exploreController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Explore" image:[UIImage imageNamed:@"Explore"] selectedImage:[UIImage imageNamed:@"Explore_selected"]];
+    exploreController.tabBarItem.tag = 1;
+    // add navigationBar
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:exploreController];
+    return navigationController;
 }
+
 
 @end

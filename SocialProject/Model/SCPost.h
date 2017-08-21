@@ -11,7 +11,7 @@
 @class CLLocation; // tell compiler don't worry, CLLocation class must exist in runtime
 @interface SCPost : NSObject
 
-@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, strong) NSDate *postDate;
 @property (nonatomic, strong) CLLocation *location;
