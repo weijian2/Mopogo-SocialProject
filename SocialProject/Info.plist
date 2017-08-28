@@ -4,6 +4,20 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>make sure we can keep location precisely</string>
+	<key>NSLocationUsageDescription</key>
+	<string>deternmine your locarion and present posts in your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>make sure we can keep location precisely</string>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -8,6 +8,8 @@
 
 #import "SCTabBarController.h"
 #import "SCHomeViewController.h"
+#import "SCExploreViewController.h"
+
 @interface SCTabBarController ()
 
 @end
@@ -18,7 +20,7 @@
     [super viewDidLoad];
     
     self.viewControllers = [self ViewControllerArray];
-    self.selectedIndex = 1; // which tab is the initial tab when open the app
+    self.selectedIndex = 0; // which tab is the initial tab when open the app
     
 }
 
@@ -53,7 +55,7 @@
 }
 
 - (UIViewController *)exploreNavigationViewController {
-    UIViewController *exploreController = [[UIViewController alloc] init];
+    SCExploreViewController *exploreController = [[SCExploreViewController alloc] init];
     exploreController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Explore" image:[UIImage imageNamed:@"Explore"] selectedImage:[UIImage imageNamed:@"Explore_selected"]];
     exploreController.tabBarItem.tag = 1;
     // add navigationBar
